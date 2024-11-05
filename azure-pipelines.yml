@@ -1,0 +1,26 @@
+trigger:
+  - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - task: UseDotNet@2
+    inputs:
+      packageType: "sdk"
+      version: "6.x"
+      installationPath: $(Agent.ToolsDirectory)/dotnet
+
+  - script: |
+      dotnet build
+      dotnet test
+    displayName: "Build and Test"
+
+  - task: Docker@2
+    inputs:
+      containerRegistry: "$(dockerRegistryServiceConnection)"
+      repository: "$(dockerRepository)"
+      command: "buildAndPush"
+      Dockerfile: "$(Build.SourcesDirectory)/Dockerfile"
+      tags: |
+        $(Build.BuildId)
