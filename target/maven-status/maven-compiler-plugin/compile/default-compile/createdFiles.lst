@@ -1,0 +1,5 @@
+com/userservicebff/userservicebff/config/AppConfig.class
+com/userservicebff/userservicebff/model/LoginRequest.class
+com/userservicebff/userservicebff/controllers/UserServiceBffController.class
+com/userservicebff/userservicebff/UserServiceBffApplication.class
+com/userservicebff/userservicebff/model/User.class
