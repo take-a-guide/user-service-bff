@@ -1,14 +1,25 @@
-# Configurações do Azure
-azure.servicebus.connection-string=<your-azure-service-bus-connection-string>
+# Usa a imagem Maven com JDK 21 para build
+FROM maven:3.9.4-eclipse-temurin-21 AS build
 
-# Configurações do AWS API Gateway (se necessário)
-aws.api-gateway.url=<your-api-gateway-url>
+# Define o diretório de trabalho
+WORKDIR /app
 
-# Configurações de banco de dados (ajuste conforme necessário)
-spring.datasource.url=jdbc:sqlserver://<your-sql-server-url>;databaseName=<your-database-name>
-spring.datasource.username=<your-username>
-spring.datasource.password=<your-password>
+# Copia o arquivo pom.xml e o código fonte
+COPY pom.xml ./
+COPY src ./src
 
-# Configurações gerais do Spring
-spring.application.name=user-service-bff
-server.port=8080
+# Compila o projeto
+RUN mvn clean package -DskipTests
+
+# Cria a imagem final usando JDK
+FROM eclipse-temurin:21-jdk
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia o JAR da etapa de build
+COPY --from=build /app/target/user-service-bff-0.0.1-SNAPSHOT.jar /app/app.jar
+
+
+# Define o comando de entrada
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]

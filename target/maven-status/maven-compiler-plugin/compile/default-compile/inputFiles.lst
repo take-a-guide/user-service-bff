@@ -1,5 +1,11 @@
 /Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/model/LoginRequest.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/DeleteUserRequest.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/ChangeUserRequest.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/LoginRequest.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/CreateUserRequest.java
 /Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/UserServiceBffApplication.java
 /Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/config/AppConfig.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/UserDto.java
 /Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/controllers/UserServiceBffController.java
+/Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/dtos/RetrieveUserRequest.java
 /Users/0xjoao/Desktop/user-service-bff/src/main/java/com/userservicebff/userservicebff/model/User.java
